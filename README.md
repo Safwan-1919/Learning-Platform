@@ -1,141 +1,83 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# Learning Platform
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+A simple and elegant web application to organize, track, and manage your learning resources from across the web. Group YouTube videos, playlists, articles, websites, and Instagram posts into customizable tabs and track your completion progress.
 
-## ✨ Technology Stack
+## Features
 
-This scaffold provides a robust foundation built with:
+- **Tab-based Organization:** Group your learning materials into distinct, customizable tabs.
+- **Multi-source Support:** Add links from:
+  - YouTube (single videos and full playlists)
+  - Instagram (posts and reels)
+  - Any website/article
+- **Automatic Metadata:** The application automatically fetches the title, description, and a thumbnail for each link.
+- **Progress Tracking:** Mark items as "completed" to track your learning journey.
+- **Clean UI:** A modern, card-based interface for easy viewing.
+- **Light & Dark Mode:** Switch between light and dark themes.
+- **Admin Panel:** A dedicated section to manage your tabs and content.
 
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## Tech Stack
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+- **Framework:** [Next.js](https://nextjs.org/) (React)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **ORM:** [Prisma](https://www.prisma.io/)
+- **Database:** SQLite (local development) & PostgreSQL (production)
+- **Data Fetching:** [TanStack Query (React Query)](https://tanstack.com/query/latest)
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+## Getting Started
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
+Follow these instructions to get a local copy up and running for development and testing purposes.
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+### Prerequisites
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+- [Node.js](https://nodejs.org/) (v18 or newer)
+- [npm](https://www.npmjs.com/)
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+### Installation
 
-## 🎯 Why This Scaffold?
+1.  **Clone the repository:**
+    ```sh
+    git clone <your-repository-url>
+    cd <repository-folder>
+    ```
 
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
+2.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
 
-## 🚀 Quick Start
+3.  **Set up the environment variables:**
+    -   Create a new file named `.env` in the root of your project.
+    -   Add the `DATABASE_URL` variable. For local development with SQLite, use:
+        ```
+        DATABASE_URL="file:./db/custom.db"
+        ```
 
-```bash
-# Install dependencies
-npm install
+4.  **Initialize the database:**
+    -   Run the following command to create the SQLite database file and apply the schema:
+        ```sh
+        npx prisma db push
+        ```
 
-# Start development server
-npm run dev
+5.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-# Build for production
-npm run build
+## Deployment
 
-# Start production server
-npm start
-```
+This application is ready to be deployed on [Vercel](https://vercel.com/).
 
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
+**Important:** Before deploying, you must switch from the local SQLite database to a remote PostgreSQL database provider, as file-based databases are not supported on Vercel.
 
-## 🤖 Powered by Z.ai
+A recommended provider is [Supabase](https://supabase.com/), which offers a generous free tier for PostgreSQL databases.
 
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
+### Deployment Steps
 
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
-
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
-```
-
-## 🎨 Available Features & Components
-
-This scaffold includes a comprehensive set of modern web development tools:
-
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
-
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
-
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
-
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
-
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
-
-## 🤝 Get Started with Z.ai
-
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
-
----
-
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+1.  **Push your code** to a Git repository (e.g., on GitHub).
+2.  **Create a PostgreSQL database** on a service like Supabase and get the connection string.
+3.  **Update your Prisma Schema** (`prisma/schema.prisma`) to use the `postgresql` provider.
+4.  **Connect to your Vercel account,** import your Git repository, and set the `DATABASE_URL` in the project's environment variables.
+5.  **Deploy!** Vercel will handle the rest.
